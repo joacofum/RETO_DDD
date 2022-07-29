@@ -5,24 +5,24 @@ import co.com.sofkau.cine.sala.values.PhoneNumber;
 import co.com.sofkau.cine.venta.values.ClientId;
 import co.com.sofkau.cine.venta.values.ClientName;
 import co.com.sofkau.cine.venta.values.Mail;
+import co.com.sofkau.cine.venta.values.SaleId;
 
 public class AddClient extends Command {
-    private final ClientId clientId;
+    private final SaleId saleId;
     private final ClientName clientName;
     private final Mail mail;
     private final PhoneNumber phoneNumber;
 
-    public AddClient(ClientId clientId, ClientName clientName, Mail mail, PhoneNumber phoneNumber) {
-        this.clientId = clientId;
+    public AddClient(SaleId saleId, ClientName clientName, Mail mail, PhoneNumber phoneNumber) {
+        this.saleId = saleId;
         this.clientName = clientName;
         this.mail = mail;
         this.phoneNumber = phoneNumber;
     }
 
-    public ClientId getClientId() {
-        return clientId;
+    public SaleId getSaleId() {
+        return saleId;
     }
-
     public ClientName getClientName() {
         return clientName;
     }

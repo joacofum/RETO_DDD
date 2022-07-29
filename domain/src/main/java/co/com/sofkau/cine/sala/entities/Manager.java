@@ -8,8 +8,8 @@ import co.com.sofkau.cine.sala.values.PhoneNumber;
 import java.util.Objects;
 
 public class Manager extends Entity<MovieManagerId> {
-    private ManagerName managerName;
-    private PhoneNumber phoneNumber;
+    protected ManagerName managerName;
+    protected PhoneNumber phoneNumber;
 
     public Manager(MovieManagerId entityId) {
         super(entityId);
