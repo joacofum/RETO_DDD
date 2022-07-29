@@ -1,23 +1,19 @@
-package co.com.sofkau.cine.venta.commands;
+package co.com.sofkau.cine.venta.events;
 
 import co.com.sofka.domain.generic.Command;
+import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.cine.venta.values.Price;
 import co.com.sofkau.cine.venta.values.ProductId;
 import co.com.sofkau.cine.venta.values.SaleId;
 
-public class UpdatePrice extends Command {
-    private final SaleId saleId;
+public class PriceUpdated extends DomainEvent {
     private final ProductId productId;
     private final Price price;
 
-    public UpdatePrice(SaleId saleId, ProductId productId, Price price) {
-        this.saleId = saleId;
+    public PriceUpdated(ProductId productId, Price price) {
+        super("co.com.sofkau.cine.venta.priceupdated");
         this.productId = productId;
         this.price = price;
-    }
-
-    public SaleId getSaleId() {
-        return saleId;
     }
 
     public ProductId getProductId() {
