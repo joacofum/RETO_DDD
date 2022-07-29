@@ -1,4 +1,4 @@
-package co.com.sofkau.cine.recepcion.values.entities;
+package co.com.sofkau.cine.venta.entities;
 
 import co.com.sofka.domain.generic.Entity;
 import co.com.sofkau.cine.venta.values.BillDescription;

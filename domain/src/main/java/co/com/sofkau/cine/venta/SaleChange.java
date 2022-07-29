@@ -1,10 +1,10 @@
 package co.com.sofkau.cine.venta;
 
 import co.com.sofka.domain.generic.EventChange;
-import co.com.sofkau.cine.recepcion.values.entities.Bill;
-import co.com.sofkau.cine.recepcion.values.entities.Client;
-import co.com.sofkau.cine.recepcion.values.entities.Product;
-import co.com.sofkau.cine.recepcion.values.entities.Seller;
+import co.com.sofkau.cine.venta.entities.Bill;
+import co.com.sofkau.cine.venta.entities.Client;
+import co.com.sofkau.cine.venta.entities.Product;
+import co.com.sofkau.cine.venta.entities.Seller;
 import co.com.sofkau.cine.venta.events.*;
 
 import java.util.HashSet;
