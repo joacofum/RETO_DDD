@@ -2,16 +2,18 @@ package co.com.sofkau.cine.recepcion.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
-public class ComplainDescription implements ValueObject<String> {
-    private final String value;
-    public ComplainDescription(String value) {
+public class Price implements ValueObject<Integer> {
+    private final Integer value;
+
+    public Price(Integer value) {
         this.value = Objects.requireNonNull(value);
     }
 
     @Override
-    public String value() {
+    public Integer value() {
         return this.value;
     }
 }
