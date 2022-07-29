@@ -3,16 +3,17 @@ package co.com.sofkau.cine.recepcion.events;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.cine.recepcion.values.Price;
 import co.com.sofkau.cine.recepcion.values.ReservationDate;
+import co.com.sofkau.cine.recepcion.values.ReservationDescription;
 import co.com.sofkau.cine.recepcion.values.ReservationId;
 import co.com.sofkau.cine.venta.values.Description;
 
 public class ReservationAdded extends DomainEvent {
     private final ReservationId reservationId;
     private final Price price;
-    private final Description description;
+    private final ReservationDescription description;
     private final ReservationDate reservationDate;
 
-    public ReservationAdded(ReservationId reservationId, Price price, Description description, ReservationDate reservationDate) {
+    public ReservationAdded(ReservationId reservationId, Price price, ReservationDescription description, ReservationDate reservationDate) {
         super("co.com.sofkau.cine.recepcion.reservationadded");
         this.reservationId = reservationId;
         this.price = price;
@@ -28,7 +29,7 @@ public class ReservationAdded extends DomainEvent {
         return price;
     }
 
-    public Description getDescription() {
+    public ReservationDescription getReservationDescription() {
         return description;
     }
 

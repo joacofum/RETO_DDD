@@ -1,24 +1,23 @@
 package co.com.sofkau.cine.recepcion.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.cine.recepcion.values.Name;
 import co.com.sofkau.cine.recepcion.values.ReceptionistId;
 
-public class NameUpdated extends DomainEvent {
+public class ReceptionistRemoved extends DomainEvent {
     private final ReceptionistId receptionistId;
-    private final Name name;
+    private final Boolean wasDeleted;
 
-    public NameUpdated(ReceptionistId receptionistId, Name name) {
-        super("co.com.sofkau.cine.recepcion.nameupdated");
+    public ReceptionistRemoved(ReceptionistId receptionistId) {
+        super("co.com.sofkau.cine.recepcion.receptionistremoved");
         this.receptionistId = receptionistId;
-        this.name = name;
+        this.wasDeleted = true;
     }
 
     public ReceptionistId getRecepcionistId() {
         return receptionistId;
     }
 
-    public Name getName() {
-        return name;
+    public Boolean getWasDeleted() {
+        return wasDeleted;
     }
 }

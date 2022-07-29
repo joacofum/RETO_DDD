@@ -2,23 +2,23 @@ package co.com.sofkau.cine.recepcion.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.cine.recepcion.values.Name;
-import co.com.sofkau.cine.recepcion.values.RecepcionistId;
-import co.com.sofkau.cine.sala.values.PhoneNumber;
+import co.com.sofkau.cine.recepcion.values.ReceptionistId;
+import co.com.sofkau.cine.recepcion.values.PhoneNumber;
 
-public class RecepcionistAdded extends DomainEvent {
-    private final RecepcionistId recepcionistId;
+public class ReceptionistAdded extends DomainEvent {
+    private final ReceptionistId receptionistId;
     private final Name name;
     private final PhoneNumber phoneNumber;
 
-    public RecepcionistAdded(RecepcionistId recepcionistId, Name name, PhoneNumber phoneNumber) {
+    public ReceptionistAdded(ReceptionistId receptionistId, Name name, PhoneNumber phoneNumber) {
         super("co.com.sofkau.cine.recepcion.recepcionistadded");
-        this.recepcionistId = recepcionistId;
+        this.receptionistId = receptionistId;
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
 
-    public RecepcionistId getRecepcionistId() {
-        return recepcionistId;
+    public ReceptionistId getRecepcionistId() {
+        return receptionistId;
     }
 
     public Name getName() {

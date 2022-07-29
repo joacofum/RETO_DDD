@@ -2,19 +2,19 @@ package co.com.sofkau.cine.recepcion.entities;
 
 import co.com.sofka.domain.generic.Entity;
 import co.com.sofkau.cine.recepcion.values.Name;
-import co.com.sofkau.cine.recepcion.values.ReceptionId;
+import co.com.sofkau.cine.recepcion.values.ReceptionistId;
 import co.com.sofkau.cine.recepcion.values.PhoneNumber;
 
 import java.util.Objects;
 
-public class Receptionist extends Entity<ReceptionId> {
+public class Receptionist extends Entity<ReceptionistId> {
     protected Name receptionistName;
     protected PhoneNumber number;
-    public Receptionist(ReceptionId entityId) {
+    public Receptionist(ReceptionistId entityId) {
         super(entityId);
     }
 
-    public Receptionist(ReceptionId entityId, Name receptionistName, PhoneNumber number) {
+    public Receptionist(ReceptionistId entityId, Name receptionistName, PhoneNumber number) {
         super(entityId);
         this.receptionistName = receptionistName;
         this.number = number;

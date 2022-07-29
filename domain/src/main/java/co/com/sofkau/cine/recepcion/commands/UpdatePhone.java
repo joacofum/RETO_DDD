@@ -1,18 +1,18 @@
 package co.com.sofkau.cine.recepcion.commands;
 
 import co.com.sofka.domain.generic.Command;
-import co.com.sofkau.cine.recepcion.values.RecepcionistId;
+import co.com.sofkau.cine.recepcion.values.ReceptionistId;
 import co.com.sofkau.cine.recepcion.values.ReceptionId;
 import co.com.sofkau.cine.recepcion.values.PhoneNumber;
 
 public class UpdatePhone extends Command {
     private final ReceptionId receptionId;
-    private final RecepcionistId recepcionistId;
+    private final ReceptionistId receptionistId;
     private final PhoneNumber phoneNumber;
 
-    public UpdatePhone(ReceptionId receptionId, RecepcionistId recepcionistId, PhoneNumber phoneNumber) {
+    public UpdatePhone(ReceptionId receptionId, ReceptionistId receptionistId, PhoneNumber phoneNumber) {
         this.receptionId = receptionId;
-        this.recepcionistId = recepcionistId;
+        this.receptionistId = receptionistId;
         this.phoneNumber = phoneNumber;
     }
 
@@ -20,8 +20,8 @@ public class UpdatePhone extends Command {
         return receptionId;
     }
 
-    public RecepcionistId getRecepcionistId() {
-        return recepcionistId;
+    public ReceptionistId getRecepcionistId() {
+        return receptionistId;
     }
 
     public PhoneNumber getPhoneNumber() {

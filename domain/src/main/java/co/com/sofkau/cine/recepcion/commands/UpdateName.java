@@ -2,17 +2,17 @@ package co.com.sofkau.cine.recepcion.commands;
 
 import co.com.sofka.domain.generic.Command;
 import co.com.sofkau.cine.recepcion.values.Name;
-import co.com.sofkau.cine.recepcion.values.RecepcionistId;
+import co.com.sofkau.cine.recepcion.values.ReceptionistId;
 import co.com.sofkau.cine.recepcion.values.ReceptionId;
 
 public class UpdateName extends Command {
     private final ReceptionId receptionId;
-    private final RecepcionistId recepcionistId;
+    private final ReceptionistId receptionistId;
     private final Name name;
 
-    public UpdateName(ReceptionId receptionId, RecepcionistId recepcionistId, Name name) {
+    public UpdateName(ReceptionId receptionId, ReceptionistId receptionistId, Name name) {
         this.receptionId = receptionId;
-        this.recepcionistId = recepcionistId;
+        this.receptionistId = receptionistId;
         this.name = name;
     }
 
@@ -20,8 +20,8 @@ public class UpdateName extends Command {
         return receptionId;
     }
 
-    public RecepcionistId getRecepcionistId() {
-        return recepcionistId;
+    public ReceptionistId getRecepcionistId() {
+        return receptionistId;
     }
 
     public Name getName() {
