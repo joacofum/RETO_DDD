@@ -1,6 +1,7 @@
 package co.com.sofkau.cine.venta.entities;
 
 import co.com.sofka.domain.generic.Entity;
+import co.com.sofkau.cine.venta.values.BillDescription;
 import co.com.sofkau.cine.venta.values.BillId;
 import co.com.sofkau.cine.venta.values.Description;
 import co.com.sofkau.cine.venta.values.ProductId;
@@ -10,11 +11,10 @@ import java.util.Set;
 
 public class Bill extends Entity<BillId> {
     protected Set<ProductId> productIdSet;
-    protected Description description;
+    protected BillDescription description;
 
-    public Bill(BillId entityId, Set<ProductId> productIdSet, Description description) {
+    public Bill(BillId entityId, BillDescription description) {
         super(entityId);
-        this.productIdSet = productIdSet;
         this.description = description;
     }
 
@@ -22,11 +22,11 @@ public class Bill extends Entity<BillId> {
         return productIdSet;
     }
 
-    public Description getDescription() {
+    public BillDescription getBillDescription() {
         return description;
     }
 
-    public void updateDescription(Description description){
+    public void updateBillDescription(BillDescription description){
         this.description = Objects.requireNonNull(description);
     }
 }

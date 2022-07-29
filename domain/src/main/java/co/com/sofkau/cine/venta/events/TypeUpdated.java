@@ -2,7 +2,6 @@ package co.com.sofkau.cine.venta.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.cine.venta.values.ProductId;
-import co.com.sofkau.cine.venta.values.SaleId;
 import co.com.sofkau.cine.venta.values.Type;
 
 public class TypeUpdated extends DomainEvent {

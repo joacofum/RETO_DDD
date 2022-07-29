@@ -13,4 +13,12 @@ public class PhoneUpdated extends DomainEvent {
         this.clientId = clientId;
         this.phoneNumber = phoneNumber;
     }
+
+    public ClientId getClientId() {
+        return clientId;
+    }
+
+    public PhoneNumber getPhoneNumber() {
+        return phoneNumber;
+    }
 }

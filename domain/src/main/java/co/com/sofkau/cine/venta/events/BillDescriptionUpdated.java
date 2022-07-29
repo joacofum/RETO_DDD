@@ -13,4 +13,12 @@ public class BillDescriptionUpdated extends DomainEvent {
         this.billId = billId;
         this.billDescription = billDescription;
     }
+
+    public BillId getBillId() {
+        return billId;
+    }
+
+    public BillDescription getBillDescription() {
+        return billDescription;
+    }
 }
