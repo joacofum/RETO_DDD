@@ -1,7 +1,7 @@
 package co.com.sofkau.cine.venta.commands;
 
 import co.com.sofka.domain.generic.Command;
-import co.com.sofkau.cine.sala.values.PhoneNumber;
+import co.com.sofkau.cine.venta.values.PhoneNumber;
 import co.com.sofkau.cine.venta.values.ClientId;
 import co.com.sofkau.cine.venta.values.SaleId;
 

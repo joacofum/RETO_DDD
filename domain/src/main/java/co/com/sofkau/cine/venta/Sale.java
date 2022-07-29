@@ -2,13 +2,11 @@ package co.com.sofkau.cine.venta;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.cine.sala.entities.Movie;
-import co.com.sofkau.cine.sala.values.MovieId;
 import co.com.sofkau.cine.sala.values.PhoneNumber;
-import co.com.sofkau.cine.venta.entities.Bill;
-import co.com.sofkau.cine.venta.entities.Client;
-import co.com.sofkau.cine.venta.entities.Product;
-import co.com.sofkau.cine.venta.entities.Seller;
+import co.com.sofkau.cine.recepcion.values.entities.Bill;
+import co.com.sofkau.cine.recepcion.values.entities.Client;
+import co.com.sofkau.cine.recepcion.values.entities.Product;
+import co.com.sofkau.cine.recepcion.values.entities.Seller;
 import co.com.sofkau.cine.venta.events.*;
 import co.com.sofkau.cine.venta.values.*;
 
