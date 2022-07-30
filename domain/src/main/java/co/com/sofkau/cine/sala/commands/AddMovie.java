@@ -15,13 +15,16 @@ public class AddMovie extends Command {
     private final MovieLanguage movieLanguage;
     private final MovieDate movieDate;
 
-    public AddMovie(CinemaRoomId cinemaRoomId, MovieName movieName, Actor actorPrincipal, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate) {
+    private final isPaused paused;
+
+    public AddMovie(CinemaRoomId cinemaRoomId, MovieName movieName, Actor actorPrincipal, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate, isPaused paused) {
         this.cinemaRoomId = cinemaRoomId;
         this.movieName = movieName;
         this.actorPrincipal = actorPrincipal;
         this.movieDuration = movieDuration;
         this.movieLanguage = movieLanguage;
         this.movieDate = movieDate;
+        this.paused = paused;
     }
 
     public CinemaRoomId getCinemaRoomId() {
@@ -49,4 +52,7 @@ public class AddMovie extends Command {
     }
 
 
+    public isPaused getPaused() {
+        return paused;
+    }
 }

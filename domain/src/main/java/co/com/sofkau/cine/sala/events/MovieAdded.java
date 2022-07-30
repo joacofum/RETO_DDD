@@ -3,8 +3,6 @@ package co.com.sofkau.cine.sala.events;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.cine.sala.values.*;
 
-import java.util.List;
-
 public class MovieAdded extends DomainEvent {
     private final MovieId movieId;
     private final MovieName movieName;
@@ -12,7 +10,10 @@ public class MovieAdded extends DomainEvent {
     private final MovieDuration movieDuration;
     private final MovieLanguage movieLanguage;
     private final MovieDate movieDate;
-    public MovieAdded(MovieId movieId, MovieName movieName, Actor actor, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate) {
+
+    private final isPaused paused;
+
+    public MovieAdded(MovieId movieId, MovieName movieName, Actor actor, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate, isPaused paused) {
         super("co.com.sofkau.cine.sala.movieAdded");
         this.movieId = movieId;
         this.movieName = movieName;
@@ -20,6 +21,7 @@ public class MovieAdded extends DomainEvent {
         this.movieDuration = movieDuration;
         this.movieLanguage = movieLanguage;
         this.movieDate = movieDate;
+        this.paused = paused;
     }
 
     public MovieId getMovieId() {
@@ -44,5 +46,9 @@ public class MovieAdded extends DomainEvent {
 
     public MovieDate getMovieDate() {
         return movieDate;
+    }
+
+    public isPaused getPaused() {
+        return paused;
     }
 }

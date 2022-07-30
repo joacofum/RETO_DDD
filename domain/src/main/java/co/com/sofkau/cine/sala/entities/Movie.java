@@ -40,6 +40,10 @@ public class Movie extends Entity<MovieId> {
         this.movieLanguage = Objects.requireNonNull(movieLanguage);
     }
 
+    public void toggleIsPaused(isPaused isPaused){
+        this.paused = Objects.requireNonNull(isPaused);
+    }
+
     public void updateActor(Actor actor){
         this.actorPrincipal = Objects.requireNonNull(actor);
     }

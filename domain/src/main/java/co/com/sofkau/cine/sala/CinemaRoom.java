@@ -2,7 +2,6 @@ package co.com.sofkau.cine.sala;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.cine.sala.commands.ToggleMovieIsPaused;
 import co.com.sofkau.cine.sala.entities.Manager;
 import co.com.sofkau.cine.sala.entities.Movie;
 import co.com.sofkau.cine.sala.events.*;
@@ -41,9 +40,9 @@ public class CinemaRoom extends AggregateEvent<CinemaRoomId> {
         appendChange(new ManagerAdded(managerId, name, number)).apply();
     }
 
-    public void addMovie(MovieName movieName, Actor actor, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate){
+    public void addMovie(MovieName movieName, Actor actor, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate, isPaused paused){
         MovieId movieId = new MovieId();
-        appendChange(new MovieAdded(movieId, movieName, actor, movieDuration, movieLanguage, movieDate)).apply();
+        appendChange(new MovieAdded(movieId, movieName, actor, movieDuration, movieLanguage, movieDate, paused)).apply();
     }
 
     public void removeManager(MovieManagerId managerId) {
@@ -76,8 +75,8 @@ public class CinemaRoom extends AggregateEvent<CinemaRoomId> {
         appendChange(new ManagerPhoneNumberUpdated(movieManagerId, number)).apply();
     }
 
-    public void togglePauseMovie(MovieId movieId){
-        appendChange(new MovieIsPausedToggled(movieId)).apply();
+    public void togglePauseMovie(MovieId movieId, isPaused paused){
+        appendChange(new MovieIsPausedToggled(movieId, paused)).apply();
     }
 
     public void toggleFinishMovie(){

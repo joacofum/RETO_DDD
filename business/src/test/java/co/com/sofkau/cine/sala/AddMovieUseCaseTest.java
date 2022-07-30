@@ -37,7 +37,8 @@ class AddMovieUseCaseTest {
         MovieDuration movieDuration = new MovieDuration(LocalTime.of(2,30,12));
         MovieLanguage movieLanguage = new MovieLanguage("Inglés");
         MovieDate movieDate = new MovieDate(LocalDate.of(2022,7,29));
-        var command = new AddMovie(cinemaRoomId, movieName, actor, movieDuration, movieLanguage, movieDate);
+        isPaused isPaused = new isPaused(true);
+        var command = new AddMovie(cinemaRoomId, movieName, actor, movieDuration, movieLanguage, movieDate, isPaused);
 
         when(repository.getEventsBy("ddddd")).thenReturn(history());
         useCase.addRepository(repository);

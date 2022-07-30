@@ -10,7 +10,7 @@ public class AddMovieUseCase extends UseCase<RequestCommand<AddMovie>, ResponseE
     public void executeUseCase(RequestCommand<AddMovie> addMovieRequestCommand) {
         var command = addMovieRequestCommand.getCommand();
         var cinemaRoom = CinemaRoom.from(command.getCinemaRoomId(), repository().getEventsBy(command.getCinemaRoomId().value()));
-        cinemaRoom.addMovie(command.getMovieName(), command.getActorPrincipal(), command.getMovieDuration(), command.getMovieLanguage(), command.getMovieDate());
+        cinemaRoom.addMovie(command.getMovieName(), command.getActorPrincipal(), command.getMovieDuration(), command.getMovieLanguage(), command.getMovieDate(), command.getPaused());
         emit().onResponse(new ResponseEvents(cinemaRoom.getUncommittedChanges()));
     }
 }

@@ -4,10 +4,8 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.cine.sala.commands.UpdateLanguage;
 import co.com.sofkau.cine.sala.commands.UpdateMovieName;
 import co.com.sofkau.cine.sala.events.CinemaRoomCreated;
-import co.com.sofkau.cine.sala.events.LanguageUpdated;
 import co.com.sofkau.cine.sala.events.MovieAdded;
 import co.com.sofkau.cine.sala.events.MovieNameUpdated;
 import co.com.sofkau.cine.sala.values.*;
@@ -65,7 +63,8 @@ class UpdateMovieNameUseCaseTest {
         MovieDuration movieDuration = new MovieDuration(LocalTime.of(2,30,12));
         MovieLanguage movieLanguage = new MovieLanguage("Inglés");
         MovieDate movieDate = new MovieDate(LocalDate.of(2022,7,29));
-        var event2 = new MovieAdded(movieId, movieName, actor, movieDuration, movieLanguage, movieDate);
+        isPaused paused = new isPaused(true);
+        var event2 = new MovieAdded(movieId, movieName, actor, movieDuration, movieLanguage, movieDate, paused);
 
         return List.of(event1, event2);
     }

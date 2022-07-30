@@ -66,7 +66,8 @@ class UpdateMovieActorUseCaseTest {
         MovieDuration movieDuration = new MovieDuration(LocalTime.of(2,30,12));
         MovieLanguage movieLanguage = new MovieLanguage("Inglés");
         MovieDate movieDate = new MovieDate(LocalDate.of(2022,7,29));
-        var event2 = new MovieAdded(movieId, movieName, actor, movieDuration, movieLanguage, movieDate);
+        isPaused paused = new isPaused(true);
+        var event2 = new MovieAdded(movieId, movieName, actor, movieDuration, movieLanguage, movieDate, paused);
 
         return List.of(event1, event2);
     }
