@@ -40,6 +40,10 @@ public class Movie extends Entity<MovieId> {
         this.movieLanguage = Objects.requireNonNull(movieLanguage);
     }
 
+    public void updateActor(Actor actor){
+        this.actorPrincipal = Objects.requireNonNull(actor);
+    }
+
     public MovieName getMovieName() {
         return movieName;
     }

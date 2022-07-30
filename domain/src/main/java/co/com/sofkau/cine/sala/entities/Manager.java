@@ -29,12 +29,6 @@ public class Manager extends Entity<MovieManagerId> {
         this.managerName = Objects.requireNonNull(name);
     }
 
-    public void togglePauseMovie(){
-    }
-
-    public void toggleFinishMovie(){
-    }
-
     public ManagerName getManagerName() {
         return managerName;
     }

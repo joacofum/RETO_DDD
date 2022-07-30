@@ -2,6 +2,7 @@ package co.com.sofkau.cine.sala;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofkau.cine.sala.commands.ToggleMovieIsPaused;
 import co.com.sofkau.cine.sala.entities.Manager;
 import co.com.sofkau.cine.sala.entities.Movie;
 import co.com.sofkau.cine.sala.events.*;
@@ -62,6 +63,10 @@ public class CinemaRoom extends AggregateEvent<CinemaRoomId> {
         appendChange(new MovieNameUpdated(movieId, name)).apply();
     }
 
+    public void updateMovieActor(MovieId movieId, Actor actor){
+        appendChange(new ActorUpdated(movieId, actor)).apply();
+    }
+
     //Manager events.
     public void updateManagerName(MovieManagerId movieManagerId, ManagerName name){
         appendChange(new ManagerNameUpdated(movieManagerId, name)).apply();
@@ -69,6 +74,13 @@ public class CinemaRoom extends AggregateEvent<CinemaRoomId> {
 
     public void updateManagerPhoneNumber(MovieManagerId movieManagerId, PhoneNumber number){
         appendChange(new ManagerPhoneNumberUpdated(movieManagerId, number)).apply();
+    }
+
+    public void togglePauseMovie(MovieId movieId){
+        appendChange(new MovieIsPausedToggled(movieId)).apply();
+    }
+
+    public void toggleFinishMovie(){
     }
 
     //findById methods
