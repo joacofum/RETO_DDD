@@ -1,11 +1,11 @@
 package co.com.sofkau.cine.venta.commands;
 
+import co.com.sofka.domain.generic.Command;
 import co.com.sofkau.cine.venta.values.BillDescription;
 import co.com.sofkau.cine.venta.values.BillId;
-import co.com.sofkau.cine.venta.values.Description;
 import co.com.sofkau.cine.venta.values.SaleId;
 
-public class UpdateBillDescription {
+public class UpdateBillDescription extends Command {
     private final SaleId saleId;
     private final BillId billId;
     private final BillDescription billDescription;
