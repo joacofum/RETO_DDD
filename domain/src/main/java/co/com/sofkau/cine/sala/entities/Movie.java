@@ -11,6 +11,7 @@ import java.util.Objects;
 public class Movie extends Entity<MovieId> {
     protected MovieName movieName;
     protected Actor actorPrincipal;
+
     protected MovieDuration movieDuration;
     protected MovieLanguage movieLanguage;
     protected MovieDate movieDate;
@@ -69,7 +70,11 @@ public class Movie extends Entity<MovieId> {
         return finished;
     }
 
-    public isPaused getPaused() {
-        return paused;
+    public void updateDuration(MovieDuration movieDuration) {
+        this.movieDuration = Objects.requireNonNull(movieDuration);
+    }
+
+    public void updateDate(MovieDate date) {
+        this.movieDate = Objects.requireNonNull(date);
     }
 }

@@ -14,7 +14,7 @@ public class MovieAdded extends DomainEvent {
     private final isPaused paused;
 
     public MovieAdded(MovieId movieId, MovieName movieName, Actor actor, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate, isPaused paused) {
-        super("co.com.sofkau.cine.sala.movieAdded");
+        super("co.com.sofkau.cine.sala.movieadded");
         this.movieId = movieId;
         this.movieName = movieName;
         this.actor = actor;

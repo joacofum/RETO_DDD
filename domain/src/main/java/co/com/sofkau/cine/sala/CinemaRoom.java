@@ -2,6 +2,7 @@ package co.com.sofkau.cine.sala;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofkau.cine.sala.commands.UpdateMovieDate;
 import co.com.sofkau.cine.sala.entities.Manager;
 import co.com.sofkau.cine.sala.entities.Movie;
 import co.com.sofkau.cine.sala.events.*;
@@ -64,6 +65,14 @@ public class CinemaRoom extends AggregateEvent<CinemaRoomId> {
 
     public void updateMovieActor(MovieId movieId, Actor actor){
         appendChange(new ActorUpdated(movieId, actor)).apply();
+    }
+
+    public void updateMovieDate(MovieId movieId, MovieDate date){
+        appendChange(new MovieDateUpdated(movieId, date)).apply();
+    }
+
+    public void updateMovieDuration(MovieId movieId, MovieDuration duration){
+        appendChange(new MovieDurationUpdated(movieId, duration)).apply();
     }
 
     //Manager events.

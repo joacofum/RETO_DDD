@@ -40,6 +40,16 @@ public class CinemaRoomChange extends EventChange {
             movie.toggleIsPaused(event.getIsPaused());
         });
 
+        apply((MovieDateUpdated event) -> {
+            Movie movie = cinemaRoom.findMovieById(event.getMovieId()).orElseThrow();
+            movie.updateDate(event.getDate());
+        });
+
+        apply((MovieDurationUpdated event) -> {
+            Movie movie = cinemaRoom.findMovieById(event.getMovieId()).orElseThrow();
+            movie.updateDuration(event.getMovieDuration());
+        });
+
         //Manager
         apply((ManagerAdded event) -> {
             cinemaRoom.manager = new Manager(event.getMovieManagerId(), event.getManagerName(), event.getPhoneNumber());
