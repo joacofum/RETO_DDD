@@ -48,7 +48,7 @@ class AddMovieUseCaseTest {
                 .orElseThrow()
                 .getDomainEvents();
 
-        //assert
+        //Assert
         var event = (MovieAdded)events.get(0);
         Assertions.assertEquals("Pocahontas", event.getMovieName().value());
         Assertions.assertEquals("Robin Hood", event.getActor().value());

@@ -1,7 +1,7 @@
 package co.com.sofkau.cine.venta.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.cine.sala.values.PhoneNumber;
+import co.com.sofkau.cine.venta.values.PhoneNumber;
 import co.com.sofkau.cine.venta.values.ClientId;
 
 public class PhoneUpdated extends DomainEvent {

@@ -8,6 +8,9 @@ import co.com.sofkau.cine.venta.commands.AddClient;
 public class AddClientUseCase extends UseCase<RequestCommand<AddClient>, ResponseEvents> {
     @Override
     public void executeUseCase(RequestCommand<AddClient> addClientRequestCommand) {
-
+        var command = addClientRequestCommand.getCommand();
+        var sale = Sale.from(command.getSaleId(), repository().getEventsBy(command.getSaleId().value()));
+        sale.addClient(command.getClientName(), command.getMail(), command.getPhoneNumber());
+        emit().onResponse(new ResponseEvents(sale.getUncommittedChanges()));
     }
 }

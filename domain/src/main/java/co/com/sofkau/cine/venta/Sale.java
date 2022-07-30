@@ -2,7 +2,8 @@ package co.com.sofkau.cine.venta;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.cine.sala.values.PhoneNumber;
+import co.com.sofkau.cine.recepcion.events.ReceptionCreated;
+import co.com.sofkau.cine.venta.values.PhoneNumber;
 import co.com.sofkau.cine.venta.entities.Bill;
 import co.com.sofkau.cine.venta.entities.Client;
 import co.com.sofkau.cine.venta.entities.Product;
@@ -22,7 +23,8 @@ public class Sale extends AggregateEvent<SaleId> {
 
     public Sale(SaleId entityId) {
         super(entityId);
-        appendChange(new SaleCreated(entityId)).apply();
+        subscribe(new SaleChange(this));
+        appendChange(new SaleCreated()).apply();
     }
 
     public static Sale from(SaleId saleId, List<DomainEvent> domainEvents) {
@@ -79,7 +81,7 @@ public class Sale extends AggregateEvent<SaleId> {
     //Bill
     public void addBill(BillDescription description){
         BillId billId = new BillId();
-        appendChange(new BillAdded(billId,description)).apply();
+        appendChange(new BillAdded(billId, description)).apply();
     }
 
     public void removeBill(BillId billId){

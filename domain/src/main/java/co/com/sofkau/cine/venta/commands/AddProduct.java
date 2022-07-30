@@ -1,26 +1,23 @@
 package co.com.sofkau.cine.venta.commands;
 
 import co.com.sofka.domain.generic.Command;
-import co.com.sofkau.cine.venta.values.Description;
-import co.com.sofkau.cine.venta.values.Price;
-import co.com.sofkau.cine.venta.values.ProductId;
-import co.com.sofkau.cine.venta.values.Type;
+import co.com.sofkau.cine.venta.values.*;
 
 public class AddProduct extends Command {
-    private final ProductId productId;
+    private final SaleId saleId;
     private final Description description;
     private final Type type;
     private final Price price;
 
-    public AddProduct(ProductId productId, Description description, Type type, Price price) {
-        this.productId = productId;
+    public AddProduct(SaleId saleId, Description description, Type type, Price price) {
+        this.saleId = saleId;
         this.description = description;
         this.type = type;
         this.price = price;
     }
 
-    public ProductId getProductId() {
-        return productId;
+    public SaleId getSaleId() {
+        return saleId;
     }
 
     public Description getDescription() {
