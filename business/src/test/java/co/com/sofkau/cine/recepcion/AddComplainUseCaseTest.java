@@ -55,7 +55,7 @@ class AddComplainUseCaseTest {
 
     }
 
-        private List<DomainEvent> history() {
+    private List<DomainEvent> history() {
         ReceptionDescription description = new ReceptionDescription("Prueba");
         var event = new ReceptionCreated(description);
         event.setAggregateRootId("xxxxx");

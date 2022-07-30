@@ -5,15 +5,16 @@ import co.com.sofka.domain.generic.Command;
 import co.com.sofkau.cine.recepcion.values.Price;
 import co.com.sofkau.cine.recepcion.values.ReceptionistId;
 import co.com.sofkau.cine.recepcion.values.ReceptionId;
+import co.com.sofkau.cine.recepcion.values.ReservationId;
 
 public class UpdatePrice extends Command {
     private final ReceptionId receptionId;
-    private final ReceptionistId receptionistId;
+    private final ReservationId reservationId;
     private final Price price;
 
-    public UpdatePrice(ReceptionId receptionId, ReceptionistId receptionistId, Price price) {
+    public UpdatePrice(ReceptionId receptionId, ReservationId reservationId, Price price) {
         this.receptionId = receptionId;
-        this.receptionistId = receptionistId;
+        this.reservationId = reservationId;
         this.price = price;
     }
 
@@ -21,10 +22,9 @@ public class UpdatePrice extends Command {
         return receptionId;
     }
 
-    public ReceptionistId getRecepcionistId() {
-        return receptionistId;
+    public ReservationId getReservationId() {
+        return reservationId;
     }
-
     public Price getPrice() {
         return price;
     }
