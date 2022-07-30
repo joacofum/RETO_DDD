@@ -34,6 +34,10 @@ class MovieIsPausedTriggeredUseCaseTest {
 
     @Test
     void MoviePausedTriggered(){
+        Capacity capacity = new Capacity(20);
+        var event1 = new CinemaRoomCreated(capacity);
+        event1.setAggregateRootId("AAAA");
+
         MovieId movieId = MovieId.of("1");
         MovieName movieName = new MovieName("Pocahontas");
         Actor actor = new Actor("Robin", "Hood");

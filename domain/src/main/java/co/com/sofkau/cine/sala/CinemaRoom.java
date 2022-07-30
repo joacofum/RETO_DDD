@@ -82,6 +82,10 @@ public class CinemaRoom extends AggregateEvent<CinemaRoomId> {
     public void toggleFinishMovie(){
     }
 
+    public void notifyCinemaRoomCreated(String mensaje){
+        appendChange(new NotifyMovieCreated(mensaje)).apply();
+    }
+
     //findById methods
     protected Optional<Movie> findMovieById(MovieId movieId) {
         return this.moviesSet.stream().filter(client -> client.identity().equals(movieId)).findFirst();
