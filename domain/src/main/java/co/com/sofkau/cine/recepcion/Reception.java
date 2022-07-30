@@ -17,8 +17,16 @@ public class Reception extends AggregateEvent<ReceptionId> {
     protected Set<Complain> complainSet;
     protected Set<Reservation> reservationSet;
 
+    protected ReceptionDescription receptionDescription;
+
     public Reception(ReceptionId entityId) {
         super(entityId);
+        subscribe(new ReceptionChange(this));
+    }
+
+    public Reception(ReceptionId entityId, ReceptionDescription receptionDescription) {
+        super(entityId);
+        appendChange(new ReceptionCreated(receptionDescription)).apply();
     }
 
     public static Reception from(ReceptionId receptionId, List<DomainEvent> domainEvents) {

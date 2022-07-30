@@ -8,15 +8,15 @@ import java.util.List;
 public class MovieAdded extends DomainEvent {
     private final MovieId movieId;
     private final MovieName movieName;
-    private final List<Actor> actors;
+    private final Actor actor;
     private final MovieDuration movieDuration;
     private final MovieLanguage movieLanguage;
     private final MovieDate movieDate;
-    public MovieAdded(MovieId movieId, MovieName movieName, List<Actor> actors, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate) {
+    public MovieAdded(MovieId movieId, MovieName movieName, Actor actor, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate) {
         super("co.com.sofkau.cine.sala.movieAdded");
         this.movieId = movieId;
         this.movieName = movieName;
-        this.actors = actors;
+        this.actor = actor;
         this.movieDuration = movieDuration;
         this.movieLanguage = movieLanguage;
         this.movieDate = movieDate;
@@ -30,8 +30,8 @@ public class MovieAdded extends DomainEvent {
         return movieName;
     }
 
-    public List<Actor> getActors() {
-        return actors;
+    public Actor getActor() {
+        return actor;
     }
 
     public MovieDuration getMovieDuration() {

@@ -5,7 +5,6 @@ import co.com.sofkau.cine.recepcion.values.Price;
 import co.com.sofkau.cine.recepcion.values.ReservationDate;
 import co.com.sofkau.cine.recepcion.values.ReservationDescription;
 import co.com.sofkau.cine.recepcion.values.ReservationId;
-import co.com.sofkau.cine.venta.values.Description;
 
 public class ReservationAdded extends DomainEvent {
     private final ReservationId reservationId;

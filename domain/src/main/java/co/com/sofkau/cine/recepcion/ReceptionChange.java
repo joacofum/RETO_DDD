@@ -11,8 +11,9 @@ import java.util.HashSet;
 public class ReceptionChange extends EventChange{
     ReceptionChange(Reception reception) {
         apply((ReceptionCreated event) -> {
-            reception.complainSet = new HashSet<>();
             reception.reservationSet = new HashSet<>();
+            reception.complainSet = new HashSet<>();
+            reception.receptionDescription = event.getReceptionDescription();
         });
 
         //Reservation

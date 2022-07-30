@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class Movie extends Entity<MovieId> {
     protected MovieName movieName;
-    protected List<Actor> actors;
+    protected Actor actorPrincipal;
     protected MovieDuration movieDuration;
     protected MovieLanguage movieLanguage;
     protected MovieDate movieDate;
@@ -21,10 +21,10 @@ public class Movie extends Entity<MovieId> {
         super(entityId);
     }
 
-    public Movie(MovieId entityId, MovieName name, List<Actor> actors, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate) {
+    public Movie(MovieId entityId, MovieName name, Actor actorPrincipal, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate) {
         super(entityId);
         this.movieName = name;
-        this.actors = actors;
+        this.actorPrincipal = actorPrincipal;
         this.movieDuration = movieDuration;
         this.movieLanguage = movieLanguage;
         this.movieDate = movieDate;
@@ -44,9 +44,6 @@ public class Movie extends Entity<MovieId> {
         return movieName;
     }
 
-    public List<Actor> getActors() {
-        return actors;
-    }
 
     public MovieDuration getMovieDuration() {
         return movieDuration;

@@ -17,6 +17,14 @@ public class CinemaRoom extends AggregateEvent<CinemaRoomId> {
 
     private CinemaRoom(CinemaRoomId entityId) {
         super(entityId);
+        subscribe(new CinemaRoomChange(this));
+    }
+
+    public CinemaRoom(CinemaRoomId entityId, Capacity capacity) {
+        super(entityId);
+        this.capacity = capacity;
+        appendChange(new CinemaRoomCreated(capacity)).apply();
+        subscribe(new CinemaRoomChange(this));
     }
 
     public static CinemaRoom from(CinemaRoomId cinemaRoomId, List<DomainEvent> domainEvents) {
@@ -32,9 +40,9 @@ public class CinemaRoom extends AggregateEvent<CinemaRoomId> {
         appendChange(new ManagerAdded(managerId, name, number)).apply();
     }
 
-    public void addMovie(MovieName movieName, List<Actor> actors, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate){
+    public void addMovie(MovieName movieName, Actor actor, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate){
         MovieId movieId = new MovieId();
-        appendChange(new MovieAdded(movieId, movieName, actors, movieDuration, movieLanguage, movieDate)).apply();
+        appendChange(new MovieAdded(movieId, movieName, actor, movieDuration, movieLanguage, movieDate)).apply();
     }
 
     public void removeManager(MovieManagerId managerId) {

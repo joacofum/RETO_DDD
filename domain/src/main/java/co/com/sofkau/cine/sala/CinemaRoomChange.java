@@ -12,11 +12,12 @@ public class CinemaRoomChange extends EventChange {
         apply((CinemaRoomCreated event) -> {
             cinemaRoom.capacity = event.getCapacity();
             cinemaRoom.moviesSet = new HashSet<>();
+
         });
 
         //Movie
         apply((MovieAdded event) -> {
-            Movie movie = new Movie(event.getMovieId(), event.getMovieName(), event.getActors(), event.getMovieDuration(), event.getMovieLanguage(), event.getMovieDate());
+            Movie movie = new Movie(event.getMovieId(), event.getMovieName(), event.getActor(), event.getMovieDuration(), event.getMovieLanguage(), event.getMovieDate());
             cinemaRoom.moviesSet.add(movie);
         });
 

@@ -8,12 +8,10 @@ import co.com.sofkau.cine.sala.values.PhoneNumber;
 
 public class AddManager extends Command {
     private final CinemaRoomId cinemaRoomId;
-    private final MovieManagerId movieManagerId;
     private final ManagerName managerName;
     private final PhoneNumber phoneNumber;
-    public AddManager(CinemaRoomId cinemaRoomId, MovieManagerId movieManagerId, ManagerName managerName, PhoneNumber phoneNumber) {
+    public AddManager(CinemaRoomId cinemaRoomId, ManagerName managerName, PhoneNumber phoneNumber) {
         this.cinemaRoomId = cinemaRoomId;
-        this.movieManagerId = movieManagerId;
         this.managerName = managerName;
         this.phoneNumber = phoneNumber;
     }
@@ -27,5 +25,4 @@ public class AddManager extends Command {
         return phoneNumber;
     }
 
-    public MovieManagerId getMovieManagerId() { return movieManagerId; }
 }

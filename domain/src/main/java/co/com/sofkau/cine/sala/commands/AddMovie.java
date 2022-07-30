@@ -9,19 +9,16 @@ import java.util.List;
 
 public class AddMovie extends Command {
     private final CinemaRoomId cinemaRoomId;
-
-    private final MovieId movieId;
     private final MovieName movieName;
-    private final List<Actor> actors;
+    private final Actor actorPrincipal;
     private final MovieDuration movieDuration;
     private final MovieLanguage movieLanguage;
     private final MovieDate movieDate;
 
-    public AddMovie(CinemaRoomId cinemaRoomId, MovieId movieId, MovieName movieName, List<Actor> actors, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate) {
+    public AddMovie(CinemaRoomId cinemaRoomId, MovieName movieName, Actor actorPrincipal, MovieDuration movieDuration, MovieLanguage movieLanguage, MovieDate movieDate) {
         this.cinemaRoomId = cinemaRoomId;
-        this.movieId = movieId;
         this.movieName = movieName;
-        this.actors = actors;
+        this.actorPrincipal = actorPrincipal;
         this.movieDuration = movieDuration;
         this.movieLanguage = movieLanguage;
         this.movieDate = movieDate;
@@ -35,8 +32,8 @@ public class AddMovie extends Command {
         return movieName;
     }
 
-    public List<Actor> getActors() {
-        return actors;
+    public Actor getActorPrincipal() {
+        return actorPrincipal;
     }
 
     public MovieDuration getMovieDuration() {
@@ -51,5 +48,5 @@ public class AddMovie extends Command {
         return movieDate;
     }
 
-    public MovieId getMovieId() { return movieId; }
+
 }

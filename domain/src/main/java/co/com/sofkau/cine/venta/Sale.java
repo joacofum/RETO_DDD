@@ -22,6 +22,7 @@ public class Sale extends AggregateEvent<SaleId> {
 
     public Sale(SaleId entityId) {
         super(entityId);
+        appendChange(new SaleCreated(entityId)).apply();
     }
 
     public static Sale from(SaleId saleId, List<DomainEvent> domainEvents) {
